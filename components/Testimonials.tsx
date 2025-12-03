@@ -1,56 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
-
-const TESTIMONIALS = [
-  {
-    id: '1',
-    name: 'Emily W.',
-    location: 'Kelowna',
-    content: 'I was really nervous about driving, but my instructor was so patient. Passed my N test on the first try!',
-    shortContent: 'So patient! Passed my N test on the first try!',
-    rating: 5,
-  },
-  {
-    id: '2',
-    name: 'Marcus C.',
-    location: 'Rutland',
-    content: 'Great value for money. The instructors really know the roads and taught my son everything he needed.',
-    shortContent: 'Great value. Taught my son everything!',
-    rating: 5,
-  },
-  {
-    id: '3',
-    name: 'Aisha P.',
-    location: 'Glenmore',
-    content: 'As a newcomer to Canada, I needed to learn BC rules. They made it easy and I feel confident now.',
-    shortContent: 'Made learning BC rules easy. Very confident now!',
-    rating: 5,
-  },
-  {
-    id: '4',
-    name: 'Ryan T.',
-    location: 'Mission',
-    content: 'Most affordable driving school I found. Excellent quality instruction. Highly recommend!',
-    shortContent: 'Most affordable + excellent quality!',
-    rating: 5,
-  },
-  {
-    id: '5',
-    name: 'Sarah K.',
-    location: 'West Kelowna',
-    content: 'My daughter passed on her first attempt! They covered everything from parking to highway driving.',
-    shortContent: 'Daughter passed first attempt!',
-    rating: 5,
-  },
-  {
-    id: '6',
-    name: 'James A.',
-    location: 'Lake Country',
-    content: 'Very organized and professional. Great communication throughout. Passed my Class 5!',
-    shortContent: 'Very professional. Passed Class 5!',
-    rating: 5,
-  },
-];
+import { TESTIMONIALS, STATS } from '../brand.config';
 
 const Testimonials: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -101,15 +51,14 @@ const Testimonials: React.FC = () => {
                 <Star key={i} size={16} className="text-yellow-400 fill-yellow-400 sm:w-5 sm:h-5" />
               ))}
             </div>
-            <span className="font-medium">5.0</span>
+            <span className="font-medium">{STATS.googleRating}</span>
             <span className="text-neutral-400">|</span>
-            <span className="text-xs sm:text-base">500+ Google reviews</span>
+            <span className="text-xs sm:text-base">{STATS.reviewCount} Google reviews</span>
           </div>
         </div>
 
         {/* Mobile: Horizontal scroll carousel */}
         <div className="lg:hidden relative">
-          {/* Scroll buttons */}
           <button
             onClick={() => scroll('left')}
             className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 bg-white shadow-lg rounded-full flex items-center justify-center transition-opacity ${
@@ -129,7 +78,6 @@ const Testimonials: React.FC = () => {
             <ChevronRight size={18} />
           </button>
 
-          {/* Scrollable container */}
           <div
             ref={scrollRef}
             className="flex gap-3 overflow-x-auto pb-4 -mx-4 px-4 snap-x snap-mandatory scrollbar-hide"
@@ -160,7 +108,6 @@ const Testimonials: React.FC = () => {
             ))}
           </div>
 
-          {/* Scroll indicator dots */}
           <div className="flex justify-center gap-1.5 mt-4">
             {TESTIMONIALS.map((_, i) => (
               <div

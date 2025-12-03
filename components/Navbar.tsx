@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
-import { COMPANY_PHONE } from '../constants';
+import { BRAND } from '../brand.config';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +14,6 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -43,17 +42,17 @@ const Navbar: React.FC = () => {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center">
-          {/* Logo - smaller on mobile */}
+          {/* Logo */}
           <a href="#" className="flex items-center gap-2 sm:gap-2.5 z-50">
             <div className="w-8 h-8 sm:w-9 sm:h-9 bg-primary-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-base sm:text-lg">K</span>
+              <span className="text-white font-bold text-base sm:text-lg">{BRAND.logoLetter}</span>
             </div>
             <span className="text-base sm:text-lg font-semibold text-neutral-900">
-              Kelowna Driving
+              {BRAND.shortName}
             </span>
           </a>
 
-          {/* Desktop Nav - centered with auto margins */}
+          {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-1 ml-12">
             {navLinks.map((link) => (
               <a
@@ -66,10 +65,10 @@ const Navbar: React.FC = () => {
             ))}
           </div>
 
-          {/* CTA - pushed to right */}
+          {/* CTA */}
           <div className="hidden md:block ml-auto">
             <a
-              href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`}
+              href={`tel:${BRAND.phone.replace(/\D/g, '')}`}
               className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-colors"
             >
               <Phone size={15} />
@@ -77,7 +76,7 @@ const Navbar: React.FC = () => {
             </a>
           </div>
 
-          {/* Mobile menu button - larger tap target */}
+          {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden ml-auto p-3 -mr-2 text-neutral-900 hover:bg-black/5 rounded-xl transition-colors active:scale-95 z-50"
@@ -88,7 +87,7 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Nav - Full screen overlay */}
+      {/* Mobile Nav */}
       <div
         className={`md:hidden fixed inset-0 bg-white z-40 transition-all duration-300 ${
           isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
@@ -96,7 +95,6 @@ const Navbar: React.FC = () => {
         style={{ top: 0 }}
       >
         <div className="flex flex-col h-full pt-20 pb-8 px-6">
-          {/* Nav Links - larger tap targets */}
           <div className="flex-1 flex flex-col justify-center space-y-2">
             {navLinks.map((link, index) => (
               <a
@@ -118,11 +116,11 @@ const Navbar: React.FC = () => {
             isOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`} style={{ transitionDelay: isOpen ? '300ms' : '0ms' }}>
             <a
-              href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`}
+              href={`tel:${BRAND.phone.replace(/\D/g, '')}`}
               className="flex items-center justify-center gap-3 w-full bg-primary-600 active:bg-primary-700 text-white py-4 rounded-2xl font-semibold text-lg shadow-lg shadow-primary-600/25"
             >
               <Phone size={22} />
-              Call {COMPANY_PHONE}
+              Call {BRAND.phone}
             </a>
             <p className="text-center text-neutral-500 text-sm">
               Open 7 days a week, 8am - 8pm

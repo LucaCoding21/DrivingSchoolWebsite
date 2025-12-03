@@ -1,78 +1,17 @@
 import React, { useState } from 'react';
 import { Check, Phone, Clock, Car, FileCheck, GraduationCap } from 'lucide-react';
-import { COMPANY_PHONE } from '../constants';
+import { BRAND, PACKAGES } from '../brand.config';
 
 type Category = 'all' | 'lessons' | 'roadtest' | 'class';
 
-const SERVICES = [
-  {
-    id: '1hour',
-    name: '1 Hour Lesson',
-    shortName: '1 Hour',
-    price: 60,
-    duration: '1 hour',
-    category: 'lessons',
-    description: 'Standard driving lesson',
-    shortDesc: 'Standard lesson',
-    icon: Clock,
-  },
-  {
-    id: '1.5hour',
-    name: '1.5 Hour Lesson',
-    shortName: '1.5 Hour',
-    price: 85,
-    duration: '90 min',
-    category: 'lessons',
-    description: 'Extended practice session',
-    shortDesc: 'Extended session',
-    icon: Clock,
-    popular: true,
-  },
-  {
-    id: 'class4-1.5',
-    name: '1.5 Hour Class 4',
-    shortName: 'Class 4 (1.5h)',
-    price: 100,
-    duration: '90 min',
-    category: 'class',
-    description: 'Class 4 including Pre-Trip',
-    shortDesc: 'Class 4 + Pre-Trip',
-    icon: Car,
-  },
-  {
-    id: 'class4-1',
-    name: '1 Hour Class 4',
-    shortName: 'Class 4 (1h)',
-    price: 70,
-    duration: '1 hour',
-    category: 'class',
-    description: 'Class 4 including Pre-Trip',
-    shortDesc: 'Class 4 + Pre-Trip',
-    icon: Car,
-  },
-  {
-    id: 'roadtest',
-    name: 'Road Test Package',
-    shortName: 'Road Test',
-    price: 150,
-    duration: '1 hour',
-    category: 'roadtest',
-    description: 'Car rental + warm-up lesson',
-    shortDesc: 'Car + warm-up',
-    icon: FileCheck,
-  },
-  {
-    id: 'class',
-    name: 'Classroom Session',
-    shortName: 'Classroom',
-    price: 100,
-    duration: '1 hour',
-    category: 'class',
-    description: 'ICBC knowledge prep',
-    shortDesc: 'ICBC knowledge',
-    icon: GraduationCap,
-  },
-];
+const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  '1hour': Clock,
+  '1.5hour': Clock,
+  'class4-1.5': Car,
+  'class4-1': Car,
+  'roadtest': FileCheck,
+  'class': GraduationCap,
+};
 
 const CATEGORIES = [
   { id: 'all', label: 'All', mobileLabel: 'All' },
@@ -85,8 +24,8 @@ const Packages: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<Category>('all');
 
   const filteredServices = activeCategory === 'all'
-    ? SERVICES
-    : SERVICES.filter(s => s.category === activeCategory);
+    ? PACKAGES
+    : PACKAGES.filter(s => s.category === activeCategory);
 
   return (
     <section id="pricing" className="py-12 sm:py-16 lg:py-20 bg-white">
@@ -104,7 +43,7 @@ const Packages: React.FC = () => {
           </p>
         </div>
 
-        {/* Category Filter - horizontal scroll on mobile */}
+        {/* Category Filter */}
         <div className="flex justify-start sm:justify-center gap-2 mb-6 sm:mb-8 lg:mb-10 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-hide">
           {CATEGORIES.map((cat) => (
             <button
@@ -122,10 +61,10 @@ const Packages: React.FC = () => {
           ))}
         </div>
 
-        {/* Service Cards Grid - 2 columns on mobile */}
+        {/* Service Cards Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 max-w-5xl mx-auto">
           {filteredServices.map((service) => {
-            const Icon = service.icon;
+            const Icon = ICONS[service.id] || Clock;
             return (
               <div
                 key={service.id}
@@ -180,12 +119,12 @@ const Packages: React.FC = () => {
               Book 5+ lessons and save 10%. Book 10+ lessons and save 15%.
             </p>
             <a
-              href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`}
+              href={`tel:${BRAND.phone.replace(/\D/g, '')}`}
               className="inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 active:bg-primary-700 text-white px-5 sm:px-6 py-3 sm:py-3.5 rounded-full font-semibold transition-colors text-sm sm:text-base w-full sm:w-auto"
             >
               <Phone size={18} />
-              <span className="sm:hidden">Call {COMPANY_PHONE}</span>
-              <span className="hidden sm:inline">Call to Book: {COMPANY_PHONE}</span>
+              <span className="sm:hidden">Call {BRAND.phone}</span>
+              <span className="hidden sm:inline">Call to Book: {BRAND.phone}</span>
             </a>
           </div>
         </div>

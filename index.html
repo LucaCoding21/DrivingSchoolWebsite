@@ -3,10 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ========================================
+         BRAND PIVOT: Update these 2 lines
+         ======================================== -->
     <title>Kelowna Driving School | Professional Driver Training in Kelowna, BC</title>
     <meta name="description" content="Kelowna's trusted driving school. Professional ICBC-certified instructors, affordable packages, and high pass rates. Class 5 & Class 7 training available." />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+      /**
+       * ========================================
+       * BRAND PIVOT: Update colors below
+       * Use https://uicolors.app to generate palette
+       * ========================================
+       */
       tailwind.config = {
         theme: {
           extend: {
@@ -14,6 +25,7 @@
               sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
             },
             colors: {
+              // PRIMARY COLOR PALETTE - Change these for brand pivot
               primary: {
                 50: '#f0f5f3',
                 100: '#d9e8e1',
@@ -21,7 +33,7 @@
                 300: '#84b5a0',
                 400: '#5a967d',
                 500: '#4a7d68',
-                600: '#3d6654',
+                600: '#3d6654',  // <-- Main brand color
                 700: '#345647',
                 800: '#2d463c',
                 900: '#263b33',
@@ -43,37 +55,43 @@
         },
       }
     </script>
+
+    <!-- ========================================
+         BRAND PIVOT: Update font if needed
+         Popular options: Inter, Poppins, Montserrat, DM Sans
+         ======================================== -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
       * {
         font-family: 'Inter', system-ui, -apple-system, sans-serif;
       }
 
-      /* Smooth scrolling */
       html {
         scroll-behavior: smooth;
       }
 
-      /* Selection color */
+      /* BRAND PIVOT: Update selection color to match primary-600 */
       ::selection {
         background-color: #3d6654;
         color: white;
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://aistudiocdn.com/react@^19.2.0",
+          "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+          "react/": "https://aistudiocdn.com/react@^19.2.0/",
+          "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="/index.css">
+  </head>
   <body class="bg-white text-neutral-900 antialiased">
     <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>

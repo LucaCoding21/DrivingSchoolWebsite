@@ -1,6 +1,6 @@
 import React from 'react';
 import { GraduationCap, RefreshCw, Award, Car, Phone } from 'lucide-react';
-import { COMPANY_PHONE } from '../constants';
+import { BRAND } from '../brand.config';
 
 const Services: React.FC = () => {
   const services = [
@@ -55,7 +55,7 @@ const Services: React.FC = () => {
           </p>
         </div>
 
-        {/* Services Grid - 2x2 on mobile, single columns scroll */}
+        {/* Services Grid */}
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
           {services.map((service, index) => (
             <div
@@ -73,7 +73,7 @@ const Services: React.FC = () => {
                 <span className="sm:hidden">{service.shortDesc}</span>
                 <span className="hidden sm:inline">{service.description}</span>
               </p>
-              {/* Features - hidden on mobile, visible on tablet+ */}
+              {/* Features - hidden on mobile */}
               <ul className="hidden sm:block space-y-1.5 sm:space-y-2">
                 {service.features.map((feature, i) => (
                   <li key={i} className="flex items-center gap-2 text-xs sm:text-sm text-neutral-700">
@@ -101,7 +101,7 @@ const Services: React.FC = () => {
             Not sure which program is right for you?
           </p>
           <a
-            href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`}
+            href={`tel:${BRAND.phone.replace(/\D/g, '')}`}
             className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 active:text-primary-700 font-semibold text-sm sm:text-base"
           >
             <Phone size={18} />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, Star, CheckCircle } from 'lucide-react';
-import { COMPANY_PHONE } from '../constants';
+import { BRAND, HERO, STATS } from '../brand.config';
 
 const Hero: React.FC = () => {
   return (
@@ -13,19 +13,18 @@ const Hero: React.FC = () => {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary-100 text-primary-700 rounded-full text-xs sm:text-sm font-medium w-fit mb-4 sm:mb-6">
               <span className="w-1.5 h-1.5 bg-primary-500 rounded-full animate-pulse"></span>
-              ICBC Certified · Kelowna, BC
+              {HERO.badge}
             </div>
 
-            {/* Headline - responsive sizing */}
+            {/* Headline */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-neutral-900 tracking-tight leading-[1.15] sm:leading-[1.1] mb-4 sm:mb-6">
-              Learn to drive<br />
-              <span className="text-primary-600">with confidence.</span>
+              {HERO.headline}<br />
+              <span className="text-primary-600">{HERO.headlineAccent}</span>
             </h1>
 
             {/* Subheadline */}
             <p className="text-base sm:text-lg text-neutral-600 mb-6 sm:mb-8 max-w-md leading-relaxed">
-              Patient instructors, flexible scheduling, and a 95% first-time pass rate.
-              We'll pick you up anywhere in Kelowna.
+              {HERO.subheadline}
             </p>
 
             {/* Mobile: Quick Trust Indicators */}
@@ -36,20 +35,20 @@ const Hero: React.FC = () => {
                     <Star key={i} size={14} className="text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
-                <span className="text-sm text-neutral-600 ml-1">5.0</span>
+                <span className="text-sm text-neutral-600 ml-1">{STATS.googleRating}</span>
               </div>
               <span className="text-neutral-300">|</span>
-              <span className="text-sm text-neutral-600">500+ Reviews</span>
+              <span className="text-sm text-neutral-600">{STATS.reviewCount} Reviews</span>
             </div>
 
-            {/* CTA Buttons - stack on mobile */}
+            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <a
-                href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`}
+                href={`tel:${BRAND.phone.replace(/\D/g, '')}`}
                 className="inline-flex items-center justify-center gap-2 bg-primary-600 active:bg-primary-700 hover:bg-primary-700 text-white px-6 py-4 rounded-xl sm:rounded-full font-semibold text-base sm:text-base transition-all shadow-lg shadow-primary-600/25 active:scale-[0.98]"
               >
                 <Phone size={20} />
-                {COMPANY_PHONE}
+                {BRAND.phone}
               </a>
               <a
                 href="#pricing"
@@ -61,12 +60,7 @@ const Hero: React.FC = () => {
 
             {/* Mobile: Quick Features */}
             <div className="grid grid-cols-2 gap-3 mt-8 lg:hidden">
-              {[
-                'Free Pickup',
-                'Car for Test',
-                'Flexible Hours',
-                'All Levels'
-              ].map((feature, i) => (
+              {HERO.quickFeatures.map((feature, i) => (
                 <div key={i} className="flex items-center gap-2 text-sm text-neutral-600">
                   <CheckCircle size={16} className="text-green-500 flex-shrink-0" />
                   {feature}
@@ -89,7 +83,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Hero Image - Full width with gradient overlay */}
+      {/* Mobile Hero Image */}
       <div className="lg:hidden relative -mt-4">
         <div className="mx-4 sm:mx-6 rounded-2xl overflow-hidden shadow-xl shadow-primary-900/10">
           <div className="relative">
@@ -98,10 +92,9 @@ const Hero: React.FC = () => {
               alt="Driving instructor teaching student"
               className="w-full h-56 sm:h-72 object-cover"
             />
-            {/* Gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
 
-            {/* Floating stat card on image */}
+            {/* Floating stat card */}
             <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-lg">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -109,19 +102,18 @@ const Hero: React.FC = () => {
                     <span className="text-lg sm:text-xl">🎯</span>
                   </div>
                   <div>
-                    <div className="font-bold text-neutral-900 text-sm sm:text-base">94% Pass Rate</div>
+                    <div className="font-bold text-neutral-900 text-sm sm:text-base">{STATS.passRate}% Pass Rate</div>
                     <div className="text-xs sm:text-sm text-neutral-500">on first attempt</div>
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="font-bold text-neutral-900 text-sm sm:text-base">2,400+</div>
+                  <div className="font-bold text-neutral-900 text-sm sm:text-base">{STATS.students.toLocaleString()}+</div>
                   <div className="text-xs sm:text-sm text-neutral-500">graduates</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        {/* Bottom spacing for floating CTA */}
         <div className="h-4"></div>
       </div>
     </section>
