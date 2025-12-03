@@ -137,15 +137,15 @@ const SuccessGallery: React.FC = () => {
                   <svg className={`absolute -bottom-1 sm:-bottom-2 left-0 w-full transition-all duration-1000 delay-700 ${
                     heroRef.isInView ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'
                   }`} style={{ transformOrigin: 'left' }} height="8" viewBox="0 0 200 8" fill="none">
-                    <path d="M1 5.5C47.6667 2.16667 154.4 -1.9 199 7.5" stroke="#3b82f6" strokeWidth="3" strokeLinecap="round"/>
+                    <path d="M1 5.5C47.6667 2.16667 154.4 -1.9 199 7.5" stroke="#3d6654" strokeWidth="3" strokeLinecap="round"/>
                   </svg>
                 </span>
               </h2>
               <p className={`text-base sm:text-lg lg:text-xl text-neutral-600 leading-relaxed mb-6 sm:mb-8 transition-all duration-700 delay-400 ${
                 heroRef.isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
               }`}>
-                Our instructors are <strong>local transit bus drivers</strong> who've seen every road
-                condition in Surrey. We don't just teach you to pass—we teach you to drive safely for life.
+                Our instructors are <strong>experienced local drivers</strong> who've seen every road
+                condition in Kelowna. We don't just teach you to pass—we teach you to drive safely for life.
               </p>
 
               {/* Quick Benefits - 2 column grid on mobile */}
@@ -263,7 +263,7 @@ const SuccessGallery: React.FC = () => {
                   title: 'Local Experts',
                   fullTitle: 'Local Road Experts',
                   desc: 'Know every route',
-                  fullDesc: 'Transit drivers who know every route',
+                  fullDesc: 'Experienced drivers who know every route',
                   icon: '🗺️'
                 },
                 {
@@ -276,8 +276,8 @@ const SuccessGallery: React.FC = () => {
                 {
                   title: 'All Areas',
                   fullTitle: 'All Areas Covered',
-                  desc: 'Surrey & more',
-                  fullDesc: 'Surrey, Newton, Fleetwood, Guildford',
+                  desc: 'Kelowna & more',
+                  fullDesc: 'Kelowna, Rutland, Glenmore, West Kelowna',
                   icon: '📍'
                 }
               ].map((item, i) => (
@@ -318,7 +318,7 @@ const SuccessGallery: React.FC = () => {
               Join 2,400+ Successful Graduates
             </h3>
             <p className="text-sm sm:text-base text-neutral-600">
-              Real students, real results. See why Surrey trusts us.
+              Real students, real results. See why Kelowna trusts us.
             </p>
           </div>
 
@@ -346,7 +346,7 @@ const SuccessGallery: React.FC = () => {
                     />
                   ))}
                 </div>
-                <p className="text-white font-medium mb-1 text-sm sm:text-base line-clamp-2">"I was terrified of driving. Now I drive on Highway 1 with confidence!"</p>
+                <p className="text-white font-medium mb-1 text-sm sm:text-base line-clamp-2">"I was terrified of driving. Now I drive on Highway 97 with confidence!"</p>
                 <p className="text-white/70 text-xs sm:text-sm">Sarah M. — Passed Class 7</p>
               </div>
             </div>
@@ -412,10 +412,10 @@ const SuccessGallery: React.FC = () => {
               areasRef.isInView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
             }`}>
               <Users className="w-5 h-5 sm:w-6 sm:h-6" />
-              <span className="font-semibold text-sm sm:text-base">Serving Surrey & Lower Mainland</span>
+              <span className="font-semibold text-sm sm:text-base">Serving Kelowna & Okanagan</span>
             </div>
             <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
-              {['Newton', 'Fleetwood', 'Guildford', 'Whalley', 'Cloverdale', 'S. Surrey'].map((area, i) => (
+              {['Rutland', 'Glenmore', 'Mission', 'Downtown', 'W. Kelowna', 'Lake Country'].map((area, i) => (
                 <span
                   key={area}
                   className={`bg-white/20 text-white px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-500 hover:bg-white/30 hover:scale-105 cursor-default ${

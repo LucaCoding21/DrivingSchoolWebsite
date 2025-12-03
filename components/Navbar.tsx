@@ -45,11 +45,11 @@ const Navbar: React.FC = () => {
         <div className="flex items-center">
           {/* Logo - smaller on mobile */}
           <a href="#" className="flex items-center gap-2 sm:gap-2.5 z-50">
-            <div className="w-8 h-8 sm:w-9 sm:h-9 bg-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-base sm:text-lg">G</span>
+            <div className="w-8 h-8 sm:w-9 sm:h-9 bg-primary-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-base sm:text-lg">K</span>
             </div>
             <span className="text-base sm:text-lg font-semibold text-neutral-900">
-              God Bless Driving
+              Kelowna Driving
             </span>
           </a>
 
@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
           <div className="hidden md:block ml-auto">
             <a
               href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`}
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-colors"
+              className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-colors"
             >
               <Phone size={15} />
               Call Us
@@ -119,7 +119,7 @@ const Navbar: React.FC = () => {
           }`} style={{ transitionDelay: isOpen ? '300ms' : '0ms' }}>
             <a
               href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`}
-              className="flex items-center justify-center gap-3 w-full bg-blue-600 active:bg-blue-700 text-white py-4 rounded-2xl font-semibold text-lg shadow-lg shadow-blue-600/25"
+              className="flex items-center justify-center gap-3 w-full bg-primary-600 active:bg-primary-700 text-white py-4 rounded-2xl font-semibold text-lg shadow-lg shadow-primary-600/25"
             >
               <Phone size={22} />
               Call {COMPANY_PHONE}

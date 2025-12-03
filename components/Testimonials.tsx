@@ -5,7 +5,7 @@ const TESTIMONIALS = [
   {
     id: '1',
     name: 'Emily W.',
-    location: 'Surrey',
+    location: 'Kelowna',
     content: 'I was really nervous about driving, but my instructor was so patient. Passed my N test on the first try!',
     shortContent: 'So patient! Passed my N test on the first try!',
     rating: 5,
@@ -13,7 +13,7 @@ const TESTIMONIALS = [
   {
     id: '2',
     name: 'Marcus C.',
-    location: 'Newton',
+    location: 'Rutland',
     content: 'Great value for money. The instructors really know the roads and taught my son everything he needed.',
     shortContent: 'Great value. Taught my son everything!',
     rating: 5,
@@ -21,7 +21,7 @@ const TESTIMONIALS = [
   {
     id: '3',
     name: 'Aisha P.',
-    location: 'Fleetwood',
+    location: 'Glenmore',
     content: 'As a newcomer to Canada, I needed to learn BC rules. They made it easy and I feel confident now.',
     shortContent: 'Made learning BC rules easy. Very confident now!',
     rating: 5,
@@ -29,7 +29,7 @@ const TESTIMONIALS = [
   {
     id: '4',
     name: 'Ryan T.',
-    location: 'Guildford',
+    location: 'Mission',
     content: 'Most affordable driving school I found. Excellent quality instruction. Highly recommend!',
     shortContent: 'Most affordable + excellent quality!',
     rating: 5,
@@ -37,7 +37,7 @@ const TESTIMONIALS = [
   {
     id: '5',
     name: 'Sarah K.',
-    location: 'Whalley',
+    location: 'West Kelowna',
     content: 'My daughter passed on her first attempt! They covered everything from parking to highway driving.',
     shortContent: 'Daughter passed first attempt!',
     rating: 5,
@@ -45,7 +45,7 @@ const TESTIMONIALS = [
   {
     id: '6',
     name: 'James A.',
-    location: 'Cloverdale',
+    location: 'Lake Country',
     content: 'Very organized and professional. Great communication throughout. Passed my Class 5!',
     shortContent: 'Very professional. Passed Class 5!',
     rating: 5,

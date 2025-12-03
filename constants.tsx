@@ -2,10 +2,10 @@ import { ServicePackage, Testimonial, FaqItem, Instructor } from './types';
 import { ShieldCheck, Clock, MapPin, Award, Zap, Heart, Car, Brain, Signpost, BookOpen, Users } from 'lucide-react';
 import React from 'react';
 
-export const COMPANY_NAME = "God Bless Driving School";
-export const COMPANY_PHONE = "778-723-2031";
-export const COMPANY_EMAIL = "info@godblessdrivingschool.com";
-export const COMPANY_ADDRESS = "9880, 133A Street, Surrey, British Columbia";
+export const COMPANY_NAME = "Kelowna Driving School";
+export const COMPANY_PHONE = "778-363-4380";
+export const COMPANY_EMAIL = "malang40@hotmail.com";
+export const COMPANY_ADDRESS = "1036 Rutland Rd N, Kelowna, BC";
 
 export const PACKAGES: ServicePackage[] = [
   {
@@ -54,15 +54,15 @@ export const TESTIMONIALS: Testimonial[] = [
     id: '1',
     name: 'Emily Wilson',
     role: 'Passed Class 7',
-    content: "I was so nervous about driving, but my instructor was patient and helped me build confidence. Passed my road test on the first try at the Surrey ICBC!",
+    content: "I was so nervous about driving, but my instructor was patient and helped me build confidence. Passed my road test on the first try at the Kelowna ICBC!",
     avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150&h=150",
     rating: 5,
   },
   {
     id: '2',
     name: 'Marcus Chen',
-    role: 'Parent from Surrey',
-    content: "Our instructors are local transit bus drivers who know every road in the city. They taught my son to drive safely in all conditions. Highly recommend!",
+    role: 'Parent from Kelowna',
+    content: "Our instructors are experienced local drivers who know every road in the city. They taught my son to drive safely in all conditions. Highly recommend!",
     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150",
     rating: 5,
   },
@@ -70,7 +70,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: '3',
     name: 'Aisha Patel',
     role: 'Newcomer to Canada',
-    content: "As a newcomer, I needed to understand BC driving rules. God Bless Driving School made it easy. Now I drive confidently on Highway 1!",
+    content: "As a newcomer, I needed to understand BC driving rules. Kelowna Driving School made it easy. Now I drive confidently on Highway 97!",
     avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150&h=150",
     rating: 5,
   },
@@ -85,12 +85,12 @@ export const FEATURES = [
   {
     icon: <MapPin className="w-6 h-6 text-brand-600" />,
     title: "Local Road Experts",
-    description: "Our instructors are local transit bus drivers who have seen every road condition in Surrey. We train you on actual ICBC test routes."
+    description: "Our instructors are experienced local drivers who know every road condition in Kelowna. We train you on actual ICBC test routes."
   },
   {
     icon: <Clock className="w-6 h-6 text-brand-600" />,
     title: "Convenient Pickup",
-    description: "Free pickup from your home or school in Surrey and surrounding areas. We work around your schedule."
+    description: "Free pickup from your home or school in Kelowna and surrounding areas. We work around your schedule."
   },
   {
     icon: <Award className="w-6 h-6 text-brand-600" />,
@@ -105,8 +105,8 @@ export const FAQS: FaqItem[] = [
     answer: "Yes! All our comprehensive packages include car rental for your exam day. We also offer a standalone 'Warm-up + Car Rental' service where we practice for 60 minutes before your test."
   },
   {
-    question: "Which areas of Surrey do you cover?",
-    answer: "We cover all of Surrey and surrounding areas including Newton, Fleetwood, Guildford, Whalley, and Cloverdale. We offer free pickup from your home or school."
+    question: "Which areas of Kelowna do you cover?",
+    answer: "We cover all of Kelowna and surrounding areas including Rutland, Glenmore, Mission, Downtown, and West Kelowna. We offer free pickup from your home or school."
   },
   {
     question: "Can I pay in installments?",
@@ -114,11 +114,11 @@ export const FAQS: FaqItem[] = [
   },
   {
     question: "How do I book my first lesson?",
-    answer: "The fastest way is to call us at 778-723-2031. We'll match you with an instructor who fits your schedule. We're a small home-based company, so you'll always get personalized attention."
+    answer: "The fastest way is to call us at 778-363-4380. We'll match you with an instructor who fits your schedule. We're a small home-based company, so you'll always get personalized attention."
   },
   {
     question: "What qualifications do your instructors have?",
-    answer: "All our instructors are local transit bus drivers who have seen the city roads in all different conditions. We are approved, certified and licensed under the Motor Vehicle Act."
+    answer: "All our instructors are experienced local drivers who know the Kelowna roads in all different conditions. We are approved, certified and licensed under the Motor Vehicle Act."
   },
   {
     question: "Do you train for Class 5 and Class 7 tests?",

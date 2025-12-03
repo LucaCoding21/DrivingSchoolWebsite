@@ -10,10 +10,10 @@ const FAQS = [
     shortAnswer: 'Yes! All packages include car rental for your ICBC road test, plus a 60-min warm-up lesson.',
   },
   {
-    question: 'What areas of Surrey do you cover?',
+    question: 'What areas of Kelowna do you cover?',
     shortQuestion: 'Areas covered?',
-    answer: 'We cover all of Surrey and surrounding areas including Newton, Fleetwood, Guildford, Whalley, and Cloverdale. We offer free pickup from your home or school.',
-    shortAnswer: 'All of Surrey: Newton, Fleetwood, Guildford, Whalley, Cloverdale. Free pickup included!',
+    answer: 'We cover all of Kelowna and surrounding areas including Rutland, Glenmore, Mission, Downtown, and West Kelowna. We offer free pickup from your home or school.',
+    shortAnswer: 'All of Kelowna: Rutland, Glenmore, Mission, Downtown, West Kelowna. Free pickup included!',
   },
   {
     question: 'Can I pay in installments?',

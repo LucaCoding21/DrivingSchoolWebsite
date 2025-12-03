@@ -13,7 +13,7 @@ const Contact: React.FC = () => {
           {/* Brand - full width on mobile */}
           <div className="col-span-2 md:col-span-1 lg:col-span-1">
             <div className="font-bold text-lg sm:text-xl mb-3 sm:mb-4">
-              God Bless <span className="text-primary-400">Driving School</span>
+              Kelowna <span className="text-primary-400">Driving School</span>
             </div>
             <p className="text-neutral-400 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
               Professional driving instruction for new and experienced drivers.
@@ -83,12 +83,12 @@ const Contact: React.FC = () => {
             <h4 className="font-semibold text-white mb-3 sm:mb-4 text-sm sm:text-base">Service Areas</h4>
             <div className="flex flex-wrap gap-1.5 sm:gap-2">
               {[
-                'Newton',
-                'Fleetwood',
-                'Guildford',
-                'Whalley',
-                'Cloverdale',
-                'S. Surrey',
+                'Rutland',
+                'Glenmore',
+                'Mission',
+                'Downtown',
+                'W. Kelowna',
+                'Lake Country',
               ].map((area) => (
                 <span
                   key={area}
@@ -115,7 +115,7 @@ const Contact: React.FC = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
             <p className="text-neutral-500 text-xs sm:text-sm text-center sm:text-left">
-              © {currentYear} God Bless Driving School
+              © {currentYear} Kelowna Driving School
             </p>
             <div className="flex gap-4 sm:gap-6 text-xs sm:text-sm">
               <a href="#" className="text-neutral-500 hover:text-white active:text-white transition-colors">
