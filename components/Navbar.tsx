@@ -14,6 +14,18 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Pricing', href: '#pricing' },
@@ -24,19 +36,19 @@ const Navbar: React.FC = () => {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/80 backdrop-blur-md shadow-sm py-4'
-          : 'bg-transparent py-6'
+        scrolled || isOpen
+          ? 'bg-white/95 backdrop-blur-md shadow-sm py-3 sm:py-4'
+          : 'bg-transparent py-4 sm:py-6'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">G</span>
+          {/* Logo - smaller on mobile */}
+          <a href="#" className="flex items-center gap-2 sm:gap-2.5 z-50">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 bg-blue-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-base sm:text-lg">G</span>
             </div>
-            <span className="text-lg font-semibold text-neutral-900">
+            <span className="text-base sm:text-lg font-semibold text-neutral-900">
               God Bless Driving
             </span>
           </a>
@@ -65,40 +77,59 @@ const Navbar: React.FC = () => {
             </a>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu button - larger tap target */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden ml-auto p-2 text-neutral-900 hover:bg-black/5 rounded-lg transition-colors"
+            className="md:hidden ml-auto p-3 -mr-2 text-neutral-900 hover:bg-black/5 rounded-xl transition-colors active:scale-95 z-50"
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Nav */}
-      {isOpen && (
-        <div className="md:hidden absolute w-full bg-white/95 backdrop-blur-md shadow-lg border-t border-neutral-100">
-          <div className="px-6 py-4 space-y-1">
-            {navLinks.map((link) => (
+      {/* Mobile Nav - Full screen overlay */}
+      <div
+        className={`md:hidden fixed inset-0 bg-white z-40 transition-all duration-300 ${
+          isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+        }`}
+        style={{ top: 0 }}
+      >
+        <div className="flex flex-col h-full pt-20 pb-8 px-6">
+          {/* Nav Links - larger tap targets */}
+          <div className="flex-1 flex flex-col justify-center space-y-2">
+            {navLinks.map((link, index) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="block py-3 px-3 text-neutral-700 font-medium rounded-lg hover:bg-neutral-50 transition-colors"
+                className={`block py-4 px-4 text-xl text-neutral-800 font-medium rounded-xl hover:bg-neutral-50 active:bg-neutral-100 transition-all transform ${
+                  isOpen ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
+                }`}
+                style={{ transitionDelay: isOpen ? `${index * 75}ms` : '0ms' }}
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
               </a>
             ))}
+          </div>
+
+          {/* Bottom CTA */}
+          <div className={`space-y-4 transition-all duration-500 ${
+            isOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+          }`} style={{ transitionDelay: isOpen ? '300ms' : '0ms' }}>
             <a
               href={`tel:${COMPANY_PHONE.replace(/\D/g, '')}`}
-              className="flex items-center justify-center gap-2 mt-4 w-full bg-blue-600 text-white py-3.5 rounded-full font-medium"
+              className="flex items-center justify-center gap-3 w-full bg-blue-600 active:bg-blue-700 text-white py-4 rounded-2xl font-semibold text-lg shadow-lg shadow-blue-600/25"
             >
-              <Phone size={18} />
-              {COMPANY_PHONE}
+              <Phone size={22} />
+              Call {COMPANY_PHONE}
             </a>
+            <p className="text-center text-neutral-500 text-sm">
+              Open 7 days a week, 8am - 8pm
+            </p>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 };
